@@ -7,12 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class ExesAndOhsTest {
 
-    private ExesAndOhs exesAndOhs;
-
-    @BeforeEach
-    public void setUp() {
-        exesAndOhs = new ExesAndOhs();
-    }
+    private ExesAndOhs exesAndOhs = new ExesAndOhs();
 
     @Test
     public void test1() {
