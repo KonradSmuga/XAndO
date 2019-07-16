@@ -10,38 +10,79 @@ class ExesAndOhsTest {
     private ExesAndOhs exesAndOhs = new ExesAndOhs();
 
     @Test
-    public void test1() {
-        assertThat(exesAndOhs.checkXO("xxxooo")).isTrue();
+    public void shouldReturnTrueWhenThisSameAmountXAndO() {
+        //given
+        String word = "xxxooo";
+    //when
+      boolean result =  exesAndOhs.checkXO(word);
+    //then
+    assertThat(result).isTrue();
+}
+
+    @Test
+    public void shouldReturnTrueWithThisSameAmountOfXAndOWithUpperCase() {
+
+        //given
+        String word = "xxxXooOo";
+        //when
+        boolean result =  exesAndOhs.checkXO(word);
+
+        //then
+        assertThat(result).isTrue();
     }
 
     @Test
-    public void test2() {
-        assertThat(exesAndOhs.checkXO("xxxXooOo")).isTrue();
+    public void shouldReturnFalseWhenNotThisSameAmountOfXAndO() {
+        //given
+        String word = "xxx23424esdsfvxXXOOooo";
+        //when
+        boolean result = exesAndOhs.checkXO(word);
+        //then
+
+        assertThat(result).isFalse();
     }
 
     @Test
-    public void test3() {
-        assertThat(exesAndOhs.checkXO("xxx23424esdsfvxXXOOooo")).isFalse();
+    public void shouldReturnFalseIfNotThisSameAmountOfXAndO() {
+        //given
+        String word = "xXxxoewrcoOoo";
+        //when
+        boolean result = exesAndOhs.checkXO(word);
+        //then
+
+        assertThat(result).isFalse();
     }
 
     @Test
-    public void test4() {
-        assertThat(exesAndOhs.checkXO("xXxxoewrcoOoo")).isFalse();
+    public void shouldReturnFalseIfNotThisSameAmountOfXAndOWithHighLetter() {
+        //given
+        String word = "XxxxooO";
+        //when
+        boolean result = exesAndOhs.checkXO(word);
+        //then
+
+
+        assertThat(result).isFalse();
     }
 
     @Test
-    public void test5() {
-        assertThat(exesAndOhs.checkXO("XxxxooO")).isFalse();
+    public void shouldReturnTrueIfNoXAndNoO() {
+        //given
+        String word = "zssddd";
+        //when
+        boolean result = exesAndOhs.checkXO(word);
+        //then
+        assertThat(result).isTrue();
     }
 
     @Test
-    public void test6() {
-        assertThat(exesAndOhs.checkXO("zssddd")).isTrue();
-    }
-
-    @Test
-    public void test7() {
-        assertThat(exesAndOhs.checkXO("Xxxxertr34")).isFalse();
+    public void shouldReturnFalseIfThereIsXButNoO() {
+        //given
+        String word = "Xxxxertr34";
+        //when
+        boolean result = exesAndOhs.checkXO(word);
+        //then
+        assertThat(result).isFalse();
     }
 
 }
