@@ -85,4 +85,15 @@ class ExesAndOhsTest {
         assertThat(result).isFalse();
     }
 
+
+    @Test
+    public void shouldReturnTrueIfSameAmountOfSmallXAndBigO() {
+        //given
+        String word = "xxxxOOOO";
+        //when
+        boolean result = exesAndOhs.checkXO(word);
+        //then
+        assertThat(result).isTrue();
+    }
+
 }
