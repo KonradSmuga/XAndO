@@ -6,10 +6,10 @@ public class ExesAndOhs {
         int a = 0;
         int b = 0;
 
-        String lowerCaseInput = input.toLowerCase()
+        String lowerCaseInput = input.toLowerCase();
         char[] chars = lowerCaseInput.toCharArray();
-        ;
-        for (int i = 0; i <= lowerCaseInput.length() - 1; i++) {
+
+        for (int i = 0; i < lowerCaseInput.length(); i++) {
             if (chars[i] == 'x') {
                 a++;
             } else if (chars[i] == 'o') {
